@@ -11,7 +11,7 @@ Basically, collectors of vinyl records can be meticulous about keeping track of 
 Things to keep track of:
 
 1. Name of Album
-2. UPC Code (Optional)
+2. [UPC Code](https://en.wikipedia.org/wiki/Universal_Product_Code) (Optional)
 3. Pressing year
 4. Artist or Group
 5. [Condition of the album](https://support.discogs.com/hc/en-us/articles/360001566193-How-To-Grade-Items)
