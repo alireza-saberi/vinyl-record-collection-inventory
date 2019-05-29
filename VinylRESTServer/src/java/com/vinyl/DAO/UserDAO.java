@@ -88,7 +88,7 @@ public class UserDAO {
     }
 
     // check if the user exist
-    public boolean isUserExist(Users user) {
+    public boolean isUserValid(Users user) {
         try {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
