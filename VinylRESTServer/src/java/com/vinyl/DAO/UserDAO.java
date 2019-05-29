@@ -24,7 +24,8 @@ public class UserDAO {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
 
-            String query = "INSERT INTO users (first_name, last_name, username, user_password) VALUES (?, ?, ?, ?)";
+            String query = "INSERT INTO users (first_name, last_name, username, user_password) "
+                         + "VALUES (?, ?, ?, ?)";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getFirst_name());
             preparedstatement.setString(2, user.getLast_name());
@@ -48,7 +49,8 @@ public class UserDAO {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
 
-            String query = "DELETE FROM users WHERE username=?";
+            String query = "DELETE FROM users "
+                         + "WHERE username=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getUsername());
 
@@ -68,7 +70,9 @@ public class UserDAO {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
 
-            String query = "UPDATE users SET first_name=? last_name=? WHERE username=?";
+            String query = "UPDATE users "
+                         + "SET first_name=?, last_name=?, "
+                         + "WHERE username=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getFirst_name());
             preparedstatement.setString(2, user.getLast_name());
@@ -89,7 +93,8 @@ public class UserDAO {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
             
-            String query = "SELECT * from users WHERE username=?";
+            String query = "SELECT * from users "
+                         + "WHERE username=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getUsername());
 
@@ -113,7 +118,8 @@ public class UserDAO {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
             
-            String query = "SELECT * from users WHERE username=? user_password=?";
+            String query = "SELECT * from users "
+                         + "WHERE username=? AND user_password=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getUsername());
             preparedstatement.setString(1, user.getUser_password());
