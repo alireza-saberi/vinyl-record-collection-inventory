@@ -151,6 +151,4 @@ public class Album {
         return "Album{" + "album_id=" + album_id + ", album_name=" + album_name + ", artist=" + artist + ", album_year=" + album_year + ", album_condition=" + album_condition + ", upc=" + upc + ", note=" + note + ", username=" + username + '}';
     }
 
- 
-
 }

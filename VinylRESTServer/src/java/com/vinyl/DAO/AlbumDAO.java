@@ -27,7 +27,7 @@ public class AlbumDAO {
             connection = obj_DB_Connection.getConnection();
 
             String query = "INSERT INTO album (album_name, artist, album_year, album_condition, upc, note, username) "
-                         + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?)";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, album.getAlbum_name());
             preparedstatement.setString(2, album.getArtist());
@@ -58,7 +58,7 @@ public class AlbumDAO {
             connection = obj_DB_Connection.getConnection();
 
             String query = "SELECT * from album "
-                         + "WHERE username=?";
+                    + "WHERE username=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getUsername());
 
@@ -94,8 +94,8 @@ public class AlbumDAO {
             connection = obj_DB_Connection.getConnection();
 
             String query = "UPDATE album "
-                         + "SET album_name=?, artist=?, album_year=?, album_condition=?, upc=?, note=? "
-                         + "WHERE username=?";
+                    + "SET album_name=?, artist=?, album_year=?, album_condition=?, upc=?, note=? "
+                    + "WHERE username=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, album.getAlbum_name());
             preparedstatement.setString(2, album.getArtist());
@@ -121,9 +121,9 @@ public class AlbumDAO {
         try {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
-            
+
             String query = "DELETE FROM album "
-                         + "WHERE album_name=? AND artist=? AND album_year=? AND album_condition=? AND upc=? AND note=? AND username=?";
+                    + "WHERE album_name=? AND artist=? AND album_year=? AND album_condition=? AND upc=? AND note=? AND username=?";
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, album.getAlbum_name());
             preparedstatement.setString(2, album.getArtist());
@@ -143,15 +143,15 @@ public class AlbumDAO {
         }
 
     }
-    
-        // delete album for a specific user
+
+    // delete album for a specific user
     public void deleteAllAlbum(Users user) {
         try {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
-            
+
             String query = "DELETE FROM album "
-                         + "WHERE username=?";
+                    + "WHERE username=?";
             preparedstatement.setString(1, user.getUsername());
 
             int rowsAffected = preparedstatement.executeUpdate();
@@ -164,5 +164,5 @@ public class AlbumDAO {
         }
 
     }
-   
+
 }

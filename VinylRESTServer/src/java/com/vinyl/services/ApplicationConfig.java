@@ -21,5 +21,5 @@ public class ApplicationConfig extends Application {
         resources.add(com.vinyl.services.VinylAlbums.class);
         resources.add(com.vinyl.services.VinylUsers.class);
     }
-    
+
 }

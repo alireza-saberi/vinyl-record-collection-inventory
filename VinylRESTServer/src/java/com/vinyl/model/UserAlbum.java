@@ -14,6 +14,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class UserAlbum {
+
     private Users user;
     private Album album;
 
@@ -69,7 +70,5 @@ public class UserAlbum {
     public String toString() {
         return "UserAlbum{" + "user=" + user + ", album=" + album + '}';
     }
-    
-    
-    
+
 }

@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("album")
 public class VinylAlbums {
-    
+
     @POST
     @Path("/addalbum")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -32,7 +32,7 @@ public class VinylAlbums {
         AlbumDAO db = new AlbumDAO();
         db.addAlbum(user, album);
     }
-    
+
     @POST
     @Path("/readalbums")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -41,7 +41,7 @@ public class VinylAlbums {
         AlbumDAO db = new AlbumDAO();
         return db.readAlbums(user);
     }
-    
+
     @PUT
     @Path("/updateuser")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -52,7 +52,7 @@ public class VinylAlbums {
         AlbumDAO db = new AlbumDAO();
         db.updateAlbum(user, album);
     }
-    
+
     @DELETE
     @Path("/delalbum")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -63,14 +63,13 @@ public class VinylAlbums {
         AlbumDAO db = new AlbumDAO();
         db.deleteAlbum(user, album);
     }
-    
-    
+
     @DELETE
     @Path("/delalbums")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces("text/plain")
     public void deleteAllAlbum(Users user) {
         AlbumDAO db = new AlbumDAO();
-        db.deleteAllAlbum(user);   
+        db.deleteAllAlbum(user);
     }
 }

@@ -15,6 +15,7 @@ import java.util.Properties;
 public class DBConnector {
 
     Connection connection = null;
+//    private Connection dbConnection
 
     public Connection getConnection() {
 
@@ -42,9 +43,13 @@ public class DBConnector {
             if (myConn != null) {
                 myConn.connection.close();
             }
-        } catch(SQLException e){
+        } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+
+    public int executeQuery(String query) throws ClassNotFoundException, SQLException {
+        return connection.createStatement().executeUpdate(query);
     }
 
 }

@@ -32,7 +32,7 @@ public class VinylUsers {
      */
     public VinylUsers() {
     }
-    
+
     @POST
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -41,7 +41,7 @@ public class VinylUsers {
         UserDAO db = new UserDAO();
         db.addUser(user);
     }
-    
+
     @DELETE
     @Path("/deluser")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -50,7 +50,7 @@ public class VinylUsers {
         UserDAO db = new UserDAO();
         db.deleteUser(user);
     }
- 
+
     @PUT
     @Path("/updateuser")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -59,7 +59,7 @@ public class VinylUsers {
         UserDAO db = new UserDAO();
         db.deleteUser(user);
     }
-    
+
     @POST
     @Path("/isuservalid")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -68,7 +68,7 @@ public class VinylUsers {
         UserDAO db = new UserDAO();
         db.isUserValid(user);
     }
-    
+
     @POST
     @Path("/readuser")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -77,5 +77,5 @@ public class VinylUsers {
         UserDAO db = new UserDAO();
         return db.readUser(user);
     }
-    
+
 }
