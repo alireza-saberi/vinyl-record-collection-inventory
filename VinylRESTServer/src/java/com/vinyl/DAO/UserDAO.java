@@ -16,9 +16,10 @@ public class UserDAO {
     ResultSet resultSet = null;
     DBConnector obj_DB_Connection = null;
     Connection connection = null;
+    int rowsAffected;
 
     // adding a user
-    public Users addUser(Users user) {
+    public int addUser(Users user) {
 
         try {
             obj_DB_Connection = new DBConnector();
@@ -32,19 +33,17 @@ public class UserDAO {
             preparedstatement.setString(3, user.getUsername());
             preparedstatement.setString(4, user.getUser_password());
 
-            int rowsAffected = preparedstatement.executeUpdate();
-
+            rowsAffected = preparedstatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
             obj_DB_Connection.closeConnection(obj_DB_Connection, preparedstatement);
-            return user;
         }
-
+        return rowsAffected;
     }
 
     // in case we want to drop a user
-    public void deleteUser(Users user) {
+    public int deleteUser(Users user) {
         try {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
@@ -54,18 +53,18 @@ public class UserDAO {
             preparedstatement = connection.prepareStatement(query);
             preparedstatement.setString(1, user.getUsername());
 
-            int rowsAffected = preparedstatement.executeUpdate();
+            rowsAffected = preparedstatement.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
             obj_DB_Connection.closeConnection(obj_DB_Connection, preparedstatement);
         }
-
+        return rowsAffected;
     }
 
     // only changing name, and family name with this methiod
-    public void updateUser(Users user) {
+    public int updateUser(Users user) {
         try {
             obj_DB_Connection = new DBConnector();
             connection = obj_DB_Connection.getConnection();
@@ -78,13 +77,13 @@ public class UserDAO {
             preparedstatement.setString(2, user.getLast_name());
             preparedstatement.setString(3, user.getUsername());
 
-            int rowsAffected = preparedstatement.executeUpdate();
+            rowsAffected = preparedstatement.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
         } finally {
             obj_DB_Connection.closeConnection(obj_DB_Connection, preparedstatement);
         }
-
+        return rowsAffected;
     }
 
     // check if the user exist
