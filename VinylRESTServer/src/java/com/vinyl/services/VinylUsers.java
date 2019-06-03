@@ -28,7 +28,7 @@ public class VinylUsers {
     private UriInfo context;
 
     /**
-     * Creates a new instance of Books
+     * Creates a new instance of Users
      */
     public VinylUsers() {
     }
@@ -37,36 +37,36 @@ public class VinylUsers {
     @Path("/adduser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces("text/plain")
-    public void addUser(Users user) {
+    public int addUser(Users user) {
         UserDAO db = new UserDAO();
-        db.addUser(user);
+        return db.addUser(user);
     }
 
     @DELETE
     @Path("/deluser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces("text/plain")
-    public void deleteUser(Users user) {
+    public int deleteUser(Users user) {
         UserDAO db = new UserDAO();
-        db.deleteUser(user);
+        return db.deleteUser(user);
     }
 
     @PUT
     @Path("/updateuser")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces("text/plain")
-    public void updateUser(Users user) {
+    public int updateUser(Users user) {
         UserDAO db = new UserDAO();
-        db.deleteUser(user);
+        return db.deleteUser(user);
     }
 
     @POST
     @Path("/isuservalid")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces("text/plain")
-    public void isUserValid(Users user) {
+    public boolean isUserValid(Users user) {
         UserDAO db = new UserDAO();
-        db.isUserValid(user);
+        return db.isUserValid(user);
     }
 
     @POST
