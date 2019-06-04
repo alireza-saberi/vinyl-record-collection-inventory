@@ -5,6 +5,7 @@ import com.vinyl.model.Album;
 import com.vinyl.model.UserAlbum;
 import com.vinyl.model.Users;
 import java.util.ArrayList;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.POST;
@@ -19,7 +20,10 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("album")
 public class VinylAlbums {
-
+    
+    @Inject
+    private AlbumDAO albumDao;
+    
     @POST
     @Path("/addalbum")
     @Consumes(MediaType.APPLICATION_JSON)

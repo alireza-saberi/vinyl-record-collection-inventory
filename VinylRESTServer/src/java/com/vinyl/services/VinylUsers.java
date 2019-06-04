@@ -7,6 +7,7 @@ package com.vinyl.services;
 
 import com.vinyl.DAO.UserDAO;
 import com.vinyl.model.Users;
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.POST;
@@ -23,6 +24,9 @@ import javax.ws.rs.core.UriInfo;
  */
 @Path("user")
 public class VinylUsers {
+    
+    @Inject
+    private UserDAO userDao;
 
     @Context
     private UriInfo context;
